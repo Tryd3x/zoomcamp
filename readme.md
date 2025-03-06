@@ -15,6 +15,11 @@ This project involves:
 - Be mindful of host, port, role, password, database when connecting to postgres
 - Learnt about handling authentications in pg_hba.conf (host and local authentication)
 - Had to install vim in container since I had to edit pg_hba.conf [apt-get update && apt-get install vim]
+- Miscellaneous shell commands: gunzip, less, more, head, tail, wc
+- Learnt about pandas' `pd.io.sql.get_engine()`
+- Learnt about sqlalchemy `create_enginer()`
+- Learnt about pandas iterators and python iterator
+- Sequentially transform and insert pandas data into database
 
 => Challenges I faced
 
@@ -46,11 +51,11 @@ docker run -it \
 postgres:13
 ```
 
-- Remote connect to postgres container using pgcli installed in conda environment
-What we know so far:
-user = root
-password = root
-db = ny_taxi
+- Remote connect to postgres container using pgcli installed in conda environment  
+What we know so far:  
+user = root  
+password = root  
+db = ny_taxi  
 
 ```
 pgcli \
@@ -59,5 +64,9 @@ pgcli \
     -u root \
     -d ny_taxi 
 ```
+
+## Resources
+
+dataset: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
 
 

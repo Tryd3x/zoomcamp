@@ -6,6 +6,6 @@ RUN mkdir /python-files
 
 WORKDIR /python-files
 
-COPY test.py .
+COPY ./scripts/pipeline.py .
 
 ENTRYPOINT ["bash"] 
