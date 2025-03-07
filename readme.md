@@ -23,6 +23,7 @@ This project involves:
 - Learnt about host-container communication and container-container communication
 - Learnt about bridge network and host network
 - Security issues when running a command: `os.system()` vs `subprocess.run()`
+- Learnt WSL-Ubuntu as secondary dev environment via remote connect
 
 ### **Challenges faced**
 
@@ -33,7 +34,7 @@ This project involves:
 
 ## Setup Instructions
 
-- Create conda environment with python 3.9 in project folder `env`. Install pgcli interface
+- [First Time Installation] Create conda environment with python 3.9 in project folder `env`. Install pgcli interface
 ```
 conda create -p env python=3.9
 conda activate env/
@@ -41,6 +42,20 @@ conda activate env/
 Inside activated conda environment, install pgcli
 ```
 pip install pgcli
+```
+
+- Skip above steps if you want to install from predefined conda environment.yml [Windows, wsl-Ubuntu]  
+For windows:
+```
+conda env create -p env -f win-environment.yml
+```
+For wsl-Ubuntu:
+```
+conda env create -p env -f wsl-ubuntu-environment.yml
+```
+Activate environment:
+```
+conda activate env/
 ```
 
 - Setup to create a volume and network followed by running a postgres container 
