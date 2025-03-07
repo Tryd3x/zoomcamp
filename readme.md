@@ -18,10 +18,11 @@ This project involves:
 - Learnt about handling authentications in pg_hba.conf (host and local authentication)
 - Had to install vim in container since I had to edit pg_hba.conf [apt-get update && apt-get install vim]
 - Miscellaneous shell commands: gunzip, less, more, head, tail, wc
-- Learnt about pandas' `pd.io.sql.get_engine()` and sqlalchemy `create_enginer()`
+- Learnt about pandas' `pd.io.sql.get_engine()` and sqlalchemy `create_engine()`
 - Learnt about pandas iterators, python iterator and how to sequentially transform and insert pandas data into database
 - Learnt about host-container communication and container-container communication
 - Learnt about bridge network and host network
+- Security issues when running a command: `os.system()` vs `subprocess.run()`
 
 ### **Challenges faced**
 
@@ -79,6 +80,19 @@ pgcli \
     -p 5432 \
     -u root \
     -d ny_taxi 
+```
+
+- Command to run ingest_data.py with arguments
+```
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+python ingest_data.py \
+    --user=root \
+    --password=root \
+    --host=localhost \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_data \
+    --url=${URL}
 ```
 
 ## Resources
