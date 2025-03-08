@@ -1,6 +1,7 @@
 from time import time
 import subprocess
 import argparse
+import shlex
 
 import pandas as pd
 from sqlalchemy import create_engine
@@ -19,23 +20,45 @@ def main(params):
 
     # download the csv
     try:
-        subprocess.run(
-            ['wget', url, "-O", csv_name],
-            capture_output=True,
-            text=True,
+        # Vulnerable to shell injection
+        ''' Example:
+            url = "https://example.com/data.csv; rm -rf /"
+            subprocess.run(f'wget -q -O - {url} | gunzip > output.csv', shell=True)
+        '''
+        
+        # Safer using shlex
+        # subprocess.run(
+        #     f'wget -q -O - {shlex.quote(url)} | gunzip > ../datasets/{shlex.quote(csv_name)}',
+        #     shell=True,
+        #     check=True,
+        # )
+        
+        wget_proc = subprocess.run(
+            ['wget', '-q', '-O', '-', url],
+            stdout=subprocess.PIPE,
             check=True,
             timeout=60,
         )
+
+        with open(f"../datasets/{csv_name}", "wb") as f:
+            gunzip_proc = subprocess.Popen(
+                ['gunzip'],
+                stdin=subprocess.PIPE,
+                stdout=f,
+            )
+
+            gunzip_proc.communicate(input=wget_proc.stdout)
+
         print("Download successful!")
     except Exception as e:
         print(e)
-        exit(99)
+        exit(1)
 
     # Establish connection to database and type of database using sqlalchemy
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
     # Load data in chunks due to enormous size and convert it into an iterator
-    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
+    df_iter = pd.read_csv(f"../datasets/{csv_name}", iterator=True, chunksize=100000)
 
     # Fetch each iterable from iterator
     df = next(df_iter)
@@ -87,13 +110,13 @@ if __name__ == "__main__":
     # dbname
     # table name
     # url of the csv
-    parser.add_argument('user', help='Username for postgres')
-    parser.add_argument('password', help='Password for postgres')
-    parser.add_argument('host', help='Host for postgres')
-    parser.add_argument('port', help='Port for postgres')
-    parser.add_argument('db', help='Database name for postgres')
-    parser.add_argument('table_name', help='name of the table to write the results to')
-    parser.add_argument('url', help='Url of the csv file')
+    parser.add_argument('--user', help='Username for postgres')
+    parser.add_argument('--password', help='Password for postgres')
+    parser.add_argument('--host', help='Host for postgres')
+    parser.add_argument('--port', help='Port for postgres')
+    parser.add_argument('--db', help='Database name for postgres')
+    parser.add_argument('--table_name', help='name of the table to write the results to')
+    parser.add_argument('--url', help='Url of the csv file')
 
     args = parser.parse_args()
 

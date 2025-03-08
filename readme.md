@@ -22,8 +22,9 @@ This project involves:
 - Learnt about pandas iterators, python iterator and how to sequentially transform and insert pandas data into database
 - Learnt about host-container communication and container-container communication
 - Learnt about bridge network and host network
-- Security issues when running a command: `os.system()` vs `subprocess.run()`
+- Addressed shell injection vulnerabilities when utlizing: `os.system()` vs `subprocess.run()`
 - Learnt WSL-Ubuntu as secondary dev environment via remote connect
+- Learnt more about streaming pipeline via `subprocess.Popen()`
 
 ### **Challenges faced**
 
@@ -45,6 +46,7 @@ pip install pgcli
 ```
 
 - Skip above steps if you want to install from predefined conda environment.yml [Windows, wsl-Ubuntu]  
+
 For windows:
 ```
 conda env create -p env -f win-environment.yml
@@ -84,10 +86,11 @@ docker run -it \
 ```
 
 - Remote connect to postgres container using pgcli installed in conda environment  
+
 What we know so far:  
-user = root  
-password = root  
-db = ny_taxi  
+- user = root  
+- password = root  
+- db = ny_taxi  
 
 ```
 pgcli \
