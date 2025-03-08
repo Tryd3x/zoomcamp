@@ -1,11 +1,15 @@
 FROM python:3.9
 
-RUN pip install pandas
+RUN apt-get update && apt-get install wget
 
-RUN mkdir /python-files
+RUN pip install pandas sqlalchemy psycopg2
 
-WORKDIR /python-files
+WORKDIR /app
 
-COPY ./scripts/pipeline.py .
+RUN mkdir datasets && mkdir scripts
 
-ENTRYPOINT ["bash"] 
+COPY ./scripts/ingest_data.py ./scripts/ingest_data.py
+
+WORKDIR /app/scripts
+
+ENTRYPOINT [ "python", "ingest_data.py" ]

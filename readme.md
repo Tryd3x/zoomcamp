@@ -113,6 +113,24 @@ python ingest_data.py \
     --url=${URL}
 ```
 
+- Command to build an image from dockerfile
+```
+docker build -t taxi_ingest .
+```
+
+- Command to run ingest_data.py inside the docker container
+```
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+docker run -it --name=taxi_ingest-1 --network=pg-network taxi_ingest \
+    --user=root \
+    --password=root \
+    --host=postgres-1 \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_data \
+    --url=${URL}
+```
+
 ## Resources
 
 dataset: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
