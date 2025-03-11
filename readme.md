@@ -124,5 +124,3 @@ This project involves:
 ## Resources
 
 dataset: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
-
-
