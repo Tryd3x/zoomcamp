@@ -27,6 +27,8 @@ This project involves:
 - Composed a docker-compose.yaml from multiple images
 - Learnt how to pass arguments (using `commands` to pass it to `entrypoint`) to a docker container
 - [Postgres] Difference between identifier `""` and String literal `''`
+- Difference between `usermod` and `gpasswd`
+- Generating ssh keys and defining config
 
 ### **Challenges faced**
 
