@@ -1,4 +1,4 @@
-name: /mnt/e/Codehub/zoomcamp/wsl-ubuntu-env
+name: /home/hyderreza/codehub/zoomcamp/env
 channels:
   - defaults
   - https://repo.anaconda.com/pkgs/main
@@ -38,7 +38,10 @@ dependencies:
       - certifi==2025.1.31
       - cffi==1.17.1
       - charset-normalizer==3.4.1
+      - cli-helpers==2.4.0
+      - click==8.1.8
       - comm==0.2.2
+      - configobj==5.0.9
       - debugpy==1.8.13
       - decorator==5.2.1
       - defusedxml==0.7.1
@@ -88,10 +91,14 @@ dependencies:
       - pandocfilters==1.5.1
       - parso==0.8.4
       - pexpect==4.9.0
+      - pgcli==4.2.0
+      - pgspecial==2.1.3
       - platformdirs==4.3.6
       - prometheus-client==0.21.1
       - prompt-toolkit==3.0.50
       - psutil==7.0.0
+      - psycopg==3.2.5
+      - psycopg-binary==3.2.5
       - ptyprocess==0.7.0
       - pure-eval==0.2.3
       - pycparser==2.22
@@ -106,11 +113,14 @@ dependencies:
       - rfc3986-validator==0.1.1
       - rpds-py==0.23.1
       - send2trash==1.8.3
+      - setproctitle==1.3.5
       - six==1.17.0
       - sniffio==1.3.1
       - soupsieve==2.6
       - sqlalchemy==2.0.38
+      - sqlparse==0.5.3
       - stack-data==0.6.3
+      - tabulate==0.9.0
       - terminado==0.18.1
       - tinycss2==1.4.0
       - tomli==2.2.1
@@ -126,4 +136,4 @@ dependencies:
       - websocket-client==1.8.0
       - widgetsnbextension==4.0.13
       - zipp==3.21.0
-prefix: /mnt/e/Codehub/zoomcamp/wsl-ubuntu-env
+prefix: /home/hyderreza/codehub/zoomcamp/env

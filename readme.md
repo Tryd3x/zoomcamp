@@ -12,7 +12,7 @@ This project involves:
 - Docker shell commands to list and delete containers and images
 - Difference between docker run and docker build
 - Difference between using RUN and CMD, ENTRYPOINT and CMD
-- Created a docker volume 'pg_data' instead of directory based mount
+- Created a docker volume 'pg_data' instead of directory based mount. 
 - Be mindful of host, port, role, password, database when connecting to postgres
 - Learnt about handling authentications in pg_hba.conf (host and local authentication)
 - Had to install vim in container since I had to edit pg_hba.conf [apt-get update && apt-get install vim]
@@ -33,8 +33,9 @@ This project involves:
 
 ### **Challenges faced**
 
-- Setting up `git remote` since `git remote add origin` is deprecated. Resolved by using SSH token to setup remote `git remote set-url origin`
-- Faced an issue with volumes. Windows is not fond of changing permissions involving linux so using docker managed volumes (volume mount) over host's directory as volume (bind mount) helped solve the issue
+- Setting up `git remote` via http is deprecated. Resolved by using SSH key to setup remote `git remote add origin <ssh-url-of-repo>`
+- Faced an issue with volumes. Windows is not fond of changing permissions involving linux so using docker managed volumes (volume mount) over host's directory as volume (bind mount) helped solve the issue.
+- Update on the above fix: changed 'owner:group' permissions of the directory based volume by `sudo chown -R hyderreza:hyderreza <folder_as_volume>`
 - Remote authentication to postgres. 
 
 
