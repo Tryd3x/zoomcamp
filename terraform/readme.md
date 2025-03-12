@@ -7,7 +7,7 @@
 -
 
 ## Commands (Terraform)
-`terraform init`        [Initialize project directory as terraform project]
-`terraform plan`        [previews the plan dictating what resources would be spun up]
-`terraform apply`       [apply the created plan from main.tf]
-`terraform destroy`     [terminate actively running plans and destroy all created resources]
+`terraform init`        [Initialize project directory as terraform project]  
+`terraform plan`        [previews the plan dictating what resources would be spun up]  
+`terraform apply`       [apply the created plan from main.tf]  
+`terraform destroy`     [terminate actively running plans and destroy all created resources]  
