@@ -58,6 +58,11 @@ This project involves:
 
 ## Docker Container Setup
 
+To spin up all containers below at once  
+```
+docker compose up
+```
+
 **I. Postgres Container**
 - Setup to create a volume and network followed by running a postgres container 
 
@@ -92,7 +97,7 @@ This project involves:
 - Setup to run ingest_data.py inside the docker container
 
   ```
-  URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/  yellow_tripdata_2021-01.csv.gz"
+  URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
   docker run -it --name=taxi_ingest-1 --network=pg-network taxi_ingest \
       --user=root \
       --password=root \
@@ -102,7 +107,7 @@ This project involves:
       --table_name=yellow_taxi_data \
       --url=${URL}
   ```
-Note: To spin up all containers above at once, use `docker compose up`
+  
 
 ## Miscellaneous
   1. Remote connect to postgres container via `pgcli`:
@@ -111,6 +116,12 @@ Note: To spin up all containers above at once, use `docker compose up`
   ```
   pip install pgcli
   ```
+
+  _Note: If error thrown on pgcli, you need to install psychopg2_
+  ```
+  pip install psychopg2-binary
+  ```
+
 - Credentials:  
   
   `user = root`  
