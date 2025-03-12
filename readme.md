@@ -29,6 +29,7 @@ This project involves:
 - [Postgres] Difference between identifier `""` and String literal `''`
 - Difference between `usermod` and `gpasswd`
 - Generating ssh keys and defining config
+- Learnt about `sftp` (put, get)
 
 ### **Challenges faced**
 
@@ -125,4 +126,5 @@ This project involves:
   ```
 ## Resources
 
-dataset: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+yellow_taxi_data: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+taxi_zones: https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv
