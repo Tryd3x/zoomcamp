@@ -102,6 +102,7 @@ This project involves:
       --table_name=yellow_taxi_data \
       --url=${URL}
   ```
+Note: To spin up all containers above at once, use `docker compose up`
 
 ## Miscellaneous
   1. Remote connect to postgres container via `pgcli`:
@@ -126,5 +127,5 @@ This project involves:
   ```
 ## Resources
 
-yellow_taxi_data: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+yellow_taxi_data: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
 taxi_zones: https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv
