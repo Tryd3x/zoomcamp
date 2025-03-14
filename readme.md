@@ -30,6 +30,9 @@ This project involves:
 - Difference between `usermod` and `gpasswd`
 - Generating ssh keys and defining config
 - Learnt about `sftp` (put, get)
+- Learnt data ingestion from github into postgres via Kestra
+- Learnt about staging tables (temporary buffer table) and fact tables (cleaned table)
+- Difference between yml's `|` (literal block scalar; preserves newlines '\n') and `>` (folded block scalar; newlines '\n' replaced by whitespace). In simple words, `|` treats a multiline string as multiline and `>` treats multiline string as a single line.
 
 ### **Challenges faced**
 
@@ -108,7 +111,37 @@ docker compose up
       --table_name=yellow_taxi_data \
       --url=${URL}
   ```
-  
+
+## Kestra Container Setup
+
+**I. Kestra container**
+  This runs a kestra container with a directory based volume
+  ```
+  docker run -it \
+    --pull=always \
+    --rm \
+    -p 8080:8080 \
+    --user=root \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp:/tmp \
+  kestra/kestra:latest server local
+  ```
+
+  Don't execute below, still working on it
+  ```
+  docker run -it \
+    --pull=always \
+    --rm \
+    -p 8080:8080 \
+    --user=root \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v ~/codehub/zoomcamp/kestra/vol_kestra/data:/app/data \
+    -v ~/codehub/zoomcamp/kestra/vol_kestra/logs:/app/logs \
+    -v ~/codehub/zoomcamp/kestra/vol_kestra/workflows:/app/workflows \
+    -v ~/codehub/zoomcamp/kestra/vol_kestra/plugins:/app/plugins \
+  kestra/kestra:latest server local
+  ```
+
 
 ## Miscellaneous
   1. Remote connect to postgres container via `pgcli`:
