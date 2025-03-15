@@ -40,6 +40,7 @@ This project involves:
 - Faced an issue with volumes. Windows is not fond of changing permissions involving linux so using docker managed volumes (volume mount) over host's directory as volume (bind mount) helped solve the issue.
 - Update on the above fix: changed 'owner:group' permissions of the directory based volume by `sudo chown -R hyderreza:hyderreza <folder_as_volume>`
 - Remote authentication to postgres. 
+- Kestra doesnt give fine grain control over the network while executing a dbt docker container as a task. It only gives access to modify the attribute `networkMode: "bridge" | "host" | "none"`. However, airflow's DockerOperator() provides a network parameter to assign the following: `"bridge" | "host" | "none" | "<network-name>|<network-id>"`
 
 
 ## Environment Setup (Anaconda)
@@ -114,6 +115,12 @@ docker compose up
 
 ## Kestra Container Setup
 
+To spin up all containers below at once, navigate to kestra folder before running the command below
+```
+cd kestra
+docker compose up
+```
+
 **I. Kestra container**
   This runs a kestra container with a directory based volume
   ```
@@ -126,22 +133,6 @@ docker compose up
     -v /tmp:/tmp \
   kestra/kestra:latest server local
   ```
-
-  Don't execute below, still working on it
-  ```
-  docker run -it \
-    --pull=always \
-    --rm \
-    -p 8080:8080 \
-    --user=root \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    -v ~/codehub/zoomcamp/kestra/vol_kestra/data:/app/data \
-    -v ~/codehub/zoomcamp/kestra/vol_kestra/logs:/app/logs \
-    -v ~/codehub/zoomcamp/kestra/vol_kestra/workflows:/app/workflows \
-    -v ~/codehub/zoomcamp/kestra/vol_kestra/plugins:/app/plugins \
-  kestra/kestra:latest server local
-  ```
-
 
 ## Miscellaneous
   1. Remote connect to postgres container via `pgcli`:

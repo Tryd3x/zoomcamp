@@ -9,6 +9,10 @@ volumes:
     driver: local
     name: pgadmin-data
 
+networks:
+  kestra_default:
+    name: kestra_default
+
 services:
   # Address of this container would be
   # For host:       localhost:5433              <-- host to container communication
@@ -21,7 +25,9 @@ services:
       - POSTGRES_PASSWORD=root 
       - POSTGRES_DB=ny_taxi
     ports:
-      - "5433:5432"
+      - "5432:5432"
+    networks:
+      - kestra_default
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin-1
@@ -31,12 +37,15 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     ports:
-      - "8082:80"
+      - "80:80"
+    networks:
+      - kestra_default
 
+  # DB for Kestra
   # Default port is 5432 and it is not being forwarded to host
   # Address of container:  postgres:5432
   postgres:
-    image: postgres
+    image: postgres 
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
@@ -48,6 +57,8 @@ services:
       interval: 30s
       timeout: 10s
       retries: 10
+    networks:
+      - kestra_default
 
   kestra:
     image: kestra/kestra:latest
@@ -93,3 +104,5 @@ services:
     depends_on:
       postgres:
         condition: service_started
+    networks:
+      - kestra_default
