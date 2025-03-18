@@ -33,6 +33,8 @@ This project involves:
 - Learnt data ingestion from github into postgres via Kestra
 - Learnt about staging tables (temporary buffer table) and fact tables (cleaned table)
 - Difference between yml's `|` (literal block scalar; preserves newlines '\n') and `>` (folded block scalar; newlines '\n' replaced by whitespace). In simple words, `|` treats a multiline string as multiline and `>` treats multiline string as a single line.
+- Integrated GCS and Bigquery with kestra workflow.
+- Learnt about DLT (data load tools - focused on extraction/ingestion, normalization and loading)
 
 ### **Challenges faced**
 
@@ -41,6 +43,7 @@ This project involves:
 - Update on the above fix: changed 'owner:group' permissions of the directory based volume by `sudo chown -R hyderreza:hyderreza <folder_as_volume>`
 - Remote authentication to postgres. 
 - Kestra doesnt give fine grain control over the network while executing a dbt docker container as a task. It only gives access to modify the attribute `networkMode: "bridge" | "host" | "none"`. However, airflow's DockerOperator() provides a network parameter to assign the following: `"bridge" | "host" | "none" | "<network-name>|<network-id>"`
+- Kestra's flow yml are syntax sensitive -> `trigger.date | date('yyyy-MM')` is different from `(trigger.date | date('yyyy-MM'))`
 
 
 ## Environment Setup (Anaconda)
