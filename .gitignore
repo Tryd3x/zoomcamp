@@ -1,6 +1,6 @@
 env
 .ipynb_checkpoints/
-datasets/*
+basic_ingestion/datasets/*.csv
 
 # Terraform credentials
 **/keys/*
