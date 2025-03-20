@@ -2,6 +2,9 @@ env
 .ipynb_checkpoints/
 basic_ingestion/datasets/*.csv
 
+# Ignore all logs
+**/logs
+
 # Terraform credentials
 **/keys/*
 
