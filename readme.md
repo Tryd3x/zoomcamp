@@ -31,10 +31,18 @@ This project involves:
 - Generating ssh keys and defining config
 - Learnt about `sftp` (put, get)
 - Learnt data ingestion from github into postgres via Kestra
-- Learnt about staging tables (temporary buffer table) and fact tables (cleaned table)
+- Learnt about staging tables (temporary buffer table) and fact tables (quantified table)
 - Difference between yml's `|` (literal block scalar; preserves newlines '\n') and `>` (folded block scalar; newlines '\n' replaced by whitespace). In simple words, `|` treats a multiline string as multiline and `>` treats multiline string as a single line.
 - Integrated GCS and Bigquery with kestra workflow.
 - Learnt about DLT (data load tools - focused on extraction/ingestion, normalization and loading)
+- Understood the difference between dimension table and fact table (Star Schema)
+- Brushed up on Data Normalization (3NF)
+- DBT seeds are basically dimensional tables that dont change frequently and can be stored as .csv files.
+- Usage of source() vs ref()
+- DBT packages: dbt_utils, codegen. Instructions on how to install them.
+- DBT docs: `dbt docs generate` to generate and host documentation
+- Deployed dbt project to production and configured a scheduler for periodic updates.
+- Applied CI/CD for automation whenever development is merged to production
 
 ### **Challenges faced**
 
