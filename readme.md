@@ -1,10 +1,6 @@
 ## Preface
 
-This project involves:
-- conda
-- docker
-- python
-- jupyter
+Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Buckets, WSL - Ubuntu, Postgres, Conda, Docker, Python, Jupyter, CI/CD, DBT, DBT labs, DLT, bash, ssh, pandas, git, github
 
 
 ### **Things I've learnt**
@@ -41,8 +37,10 @@ This project involves:
 - Usage of source() vs ref()
 - DBT packages: dbt_utils, codegen. Instructions on how to install them.
 - DBT docs: `dbt docs generate` to generate and host documentation
-- Deployed dbt project to production and configured a scheduler for periodic updates.
-- Applied CI/CD for automation whenever development is merged to production
+- Deployed dbt project (using dbt cloud) to production and configured a scheduler for periodic updates.
+- Applied CI/CD for automation whenever development is merged to production.
+- Learnt about Github Actions and Github Webhooks for CI/CD. Read article on how to manage CI in airflow.
+- Utilized Looker Studio (formerly Google Data Studio) for visualizing data from data warehouse.
 
 ### **Challenges faced**
 
