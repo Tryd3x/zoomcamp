@@ -1,6 +1,8 @@
 env
 .ipynb_checkpoints/
-basic_ingestion/datasets/*.csv
+
+**/artifacts/*
+**/datasets/*
 
 # Ignore all logs
 **/logs
