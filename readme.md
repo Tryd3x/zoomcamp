@@ -42,6 +42,8 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Bucket
 - Learnt about Github Actions and Github Webhooks for CI/CD. Read article on how to manage CI in airflow.
 - Utilized Looker Studio (formerly Google Data Studio) for visualizing data from data warehouse.
 - Parquet supports schema evolution and comes with preserved schema
+- Perform repartition() to distribute data across multiple workers for faster computation
+- Perform colaesce() to gather all the distributed partitions 
 
 ### **Challenges faced**
 
