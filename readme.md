@@ -43,7 +43,8 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Bucket
 - Utilized Looker Studio (formerly Google Data Studio) for visualizing data from data warehouse.
 - Parquet supports schema evolution and comes with preserved schema
 - Perform repartition() to distribute data across multiple workers for faster computation
-- Perform colaesce() to gather all the distributed partitions 
+- Perform coalesce() to gather all the distributed partitions 
+- Spark pushes code to data instead of data being pushed to code (Data Locality)
 
 ### **Challenges faced**
 
