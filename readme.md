@@ -48,6 +48,7 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Bucket
 - Shuffle causes data to move across partitions (expesive) before performing the final aggregation (reduce())
 - Learnt about local aggregation vs global aggregation. [reduceByKey() vs groupByKey()]
 - If data is small, it is broadcasted to each worker node instead having it to reshuffle the large data.
+- RDD level operations: parallelize(), map(), reduceByKey(), take(), collect(), toDF(), mapPartition()
 
 ### **Challenges faced**
 
