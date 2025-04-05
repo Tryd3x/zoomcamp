@@ -45,6 +45,9 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Bucket
 - Perform repartition() to distribute data across multiple workers for faster computation
 - Perform coalesce() to gather all the distributed partitions 
 - Spark pushes code to data instead of data being pushed to code (Data Locality)
+- Shuffle causes data to move across partitions (expesive) before performing the final aggregation (reduce())
+- Learnt about local aggregation vs global aggregation. [reduceByKey() vs groupByKey()]
+- If data is small, it is broadcasted to each worker node instead having it to reshuffle the large data.
 
 ### **Challenges faced**
 
