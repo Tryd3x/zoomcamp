@@ -49,6 +49,9 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Cloud Storage, W
 - Learnt about local aggregation vs global aggregation. [reduceByKey() vs groupByKey()]
 - If data is small, it is broadcasted to each worker node instead having it to reshuffle the large data.
 - RDD level operations: parallelize(), map(), reduceByKey(), take(), collect(), toDF(), mapPartition()
+- Manually start Master node by navigating to spark's sbin folder and executing `start-master.sh`
+- Manually add Worker node to Master by executing `start-worker.sh <master-URL>`
+- Configure Master node to submit a python script as a spark job using `spark-submit`.
 
 ### **Challenges faced**
 
