@@ -1,6 +1,6 @@
 ## Preface
 
-Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Storage - Buckets, WSL - Ubuntu, Postgres, Conda, Docker, Python, Jupyter, CI/CD, DBT, DBT labs, DLT, bash, ssh, pandas, git, github
+Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Cloud Storage, WSL - Ubuntu, Postgres, Conda, Docker, Python, Jupyter, CI/CD, DBT, DBT labs, DLT, bash, ssh, pandas, git, github, Spark
 
 
 ### **Things I've learnt**
