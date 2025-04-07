@@ -59,7 +59,7 @@ wget -P ../datasets https://github.com/DataTalksClub/nyc-tlc-data/releases/downl
 
     Run:
     ```
-    gcloud dataproc jobs submit \
+    gcloud dataproc jobs submit 
       pyspark \
       --cluster=cluster-f19a \
       --region=us-central1 \
@@ -75,6 +75,33 @@ wget -P ../datasets https://github.com/DataTalksClub/nyc-tlc-data/releases/downl
     --cluster: name of the cluster created on gcp
     gs://zoomcamp-454219-nytaxi/code/dataproc_spark_sql.py: script to execute as spark job
     -- <script arguments>
+    ```
+    Note: Make sure to copy `dataproc_spark_sql.py` to `gs://zoomcamp-454219-nytaxi/code`
+    ```
+      gsutil -m cp -r dataproc_spark_sql.py gs://zoomcamp-454219-nytaxi/code/dataproc_spark_sql.py
+    ```
+
+  - To submit spark job on dataproc to store results in bigquery table `trips_data_all.reports-2020`  
+    Run:  
+    ```
+    gcloud dataproc jobs submit \
+      pyspark \
+      --cluster=cluster-f19a \
+      --region=us-central1 \
+      gs://zoomcamp-454219-nytaxi/code/04_spark_sql_bigquery.py \
+      -- \
+        --input_green=gs://zoomcamp-454219-nytaxi/pq/green/2021/*/ \
+        --input_yellow=gs://zoomcamp-454219-nytaxi/pq/yellow/2021/*/ \
+        --output=de_zoomcamp.reports-2021
+    ```
+    Note:  
+    - Inside `04_spark_sql_bigquery.py`, set `bucket` to one of the temp buckets created by dataproc cluster
+    ```
+    spark.conf.set('temporaryGcsBucket', bucket)
+    ```
+    - Make sure to copy `04_spark_sql_bigquery.py` to `gs://zoomcamp-454219-nytaxi/code`
+    ```
+      gsutil -m cp -r 04_spark_sql_bigquery.py gs://zoomcamp-454219-nytaxi/code/04_spark_sql_bigquery.py
     ```
 
 
