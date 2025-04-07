@@ -42,3 +42,39 @@ wget -P ../datasets https://github.com/DataTalksClub/nyc-tlc-data/releases/downl
   ```
 
   **Note:** Obtain `URL` by navigating to `$SPARK_HOME/sbin` and executing `./start-master.sh`. Open browser to `localhost:8080` and copy the Master URL
+
+
+## Dataproc
+
+  - To submit spark job on dataproc, modify the arguments for `04_spark_sql.py`  
+  
+    Arguments:  
+    ```
+      --input_green=gs://zoomcamp-454219-nytaxi/pq/green/2021/*/
+      --input_yellow=gs://zoomcamp-454219-nytaxi/pq/yellow/2021/*/
+      --output=gs://zoomcamp-454219-nytaxi/report-2021
+    ```
+
+  - To submit spark job on dataproc via gcloud  
+
+    Run:
+    ```
+    gcloud dataproc jobs submit \
+      pyspark \
+      --cluster=cluster-f19a \
+      --region=us-central1 \
+      gs://zoomcamp-454219-nytaxi/code/dataproc_spark_sql.py \
+      -- \
+        --input_green=gs://zoomcamp-454219-nytaxi/pq/green/2021/*/ \
+        --input_yellow=gs://zoomcamp-454219-nytaxi/pq/yellow/2021/*/ \
+        --output=gs://zoomcamp-454219-nytaxi/data/report-2021
+    ```
+
+    Arguments:
+    ```
+    --cluster: name of the cluster created on gcp
+    gs://zoomcamp-454219-nytaxi/code/dataproc_spark_sql.py: script to execute as spark job
+    -- <script arguments>
+    ```
+
+
