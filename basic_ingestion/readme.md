@@ -49,6 +49,35 @@ docker compose up
       --table_name=yellow_taxi_data \
       --url=${URL}
   ```
+
+## Miscellaneous
+  1. Remote connect to postgres container via `pgcli`:
+- Install pgcli (do it inside a conda environment):
+
+  ```
+  pip install pgcli
+  ```
+
+  _Note: If error thrown on pgcli, you need to install psychopg2_
+  ```
+  pip install psychopg2-binary
+  ```
+
+- Credentials:  
+  
+  `user = root`  
+  `password = root`  
+  `db = ny_taxi`
+
+- Connect to postgres database (make sure postgres container is up and running)
+  ```
+  pgcli \
+      -h localhost \
+      -p 5432 \
+      -u root \
+      -d ny_taxi 
+  ```
+  
 ## Resources
 
 yellow_taxi_data: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
