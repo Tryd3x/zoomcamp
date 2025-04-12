@@ -27,16 +27,12 @@ dependencies:
       - agate==1.9.1
       - annotated-types==0.7.0
       - anyio==4.8.0
-      - apache-beam==2.38.0
-      - apache-flink==1.16.0
-      - apache-flink-libraries==1.16.0
       - argon2-cffi==23.1.0
       - argon2-cffi-bindings==21.2.0
       - arrow==1.3.0
       - asttokens==3.0.0
       - async-lru==2.0.4
       - attrs==25.1.0
-      - avro-python3==1.9.2.1
       - babel==2.17.0
       - beautifulsoup4==4.13.3
       - bleach==6.2.0
@@ -45,12 +41,10 @@ dependencies:
       - charset-normalizer==3.4.1
       - cli-helpers==2.4.0
       - click==8.1.8
-      - cloudpickle==2.1.0
       - colorama==0.4.6
       - comm==0.2.2
       - configobj==5.0.9
       - contourpy==1.3.0
-      - crcmod==1.7
       - cycler==0.12.1
       - daff==1.3.46
       - dbt-adapters==1.14.3
@@ -63,15 +57,11 @@ dependencies:
       - decorator==5.2.1
       - deepdiff==7.0.1
       - defusedxml==0.7.1
-      - dill==0.3.1.1
       - dlt==1.8.1
-      - docopt==0.6.2
       - duckdb==1.2.1
       - exceptiongroup==1.2.2
       - executing==2.2.0
-      - fastavro==1.4.7
       - fastjsonschema==2.21.1
-      - find-libpython==0.4.0
       - fonttools==4.57.0
       - fqdn==1.5.1
       - fsspec==2025.3.0
@@ -79,12 +69,9 @@ dependencies:
       - gitpython==3.1.44
       - giturlparse==0.12.0
       - greenlet==3.1.1
-      - grpcio==1.71.0
       - h11==0.14.0
-      - hdfs==2.7.3
       - hexbytes==1.3.0
       - httpcore==1.0.7
-      - httplib2==0.19.1
       - httpx==0.28.1
       - humanize==4.12.1
       - idna==3.10
@@ -114,7 +101,6 @@ dependencies:
       - jupyterlab-pygments==0.3.0
       - jupyterlab-server==2.27.3
       - jupyterlab-widgets==3.0.13
-      - kafka-python==2.1.5
       - kiwisolver==1.4.7
       - leather==0.4.0
       - makefun==1.15.6
@@ -134,19 +120,17 @@ dependencies:
       - networkx==3.2.1
       - notebook==7.3.2
       - notebook-shim==0.2.4
-      - numpy==1.21.4
-      - oauth2client==4.1.3
+      - numpy==2.0.2
       - ordered-set==4.1.0
       - orjson==3.10.15
       - overrides==7.7.0
       - packaging==24.2
-      - pandas==1.3.5
+      - pandas==2.2.3
       - pandocfilters==1.5.1
       - parsedatetime==2.6
       - parso==0.8.4
       - pathspec==0.12.1
       - pathvalidate==3.2.3
-      - pemja==0.2.6
       - pendulum==3.0.0
       - pexpect==4.9.0
       - pgcli==4.2.0
@@ -157,26 +141,20 @@ dependencies:
       - ply==3.11
       - prometheus-client==0.21.1
       - prompt-toolkit==3.0.50
-      - proto-plus==1.19.6
-      - protobuf==3.17.3
+      - protobuf==5.29.3
       - psutil==7.0.0
       - psycopg==3.2.5
       - psycopg-binary==3.2.5
-      - psycopg2-binary==2.9.1
+      - psycopg2-binary==2.9.10
       - ptyprocess==0.7.0
       - pure-eval==0.2.3
-      - py4j==0.10.9.3
-      - pyarrow==6.0.1
-      - pyasn1==0.6.1
-      - pyasn1-modules==0.4.2
+      - pyarrow==19.0.1
       - pycparser==2.22
       - pydantic==2.10.6
       - pydantic-core==2.27.2
-      - pydot==1.4.2
       - pygments==2.19.1
-      - pymongo==3.13.0
-      - pyparsing==2.4.7
-      - python-dateutil==2.8.0
+      - pyparsing==3.2.3
+      - python-dateutil==2.9.0.post0
       - python-json-logger==3.3.0
       - python-slugify==8.0.4
       - pytimeparse==1.1.8
@@ -191,7 +169,6 @@ dependencies:
       - rich==13.9.4
       - rich-argparse==1.7.0
       - rpds-py==0.23.1
-      - rsa==4.9
       - semver==3.0.4
       - send2trash==1.8.3
       - setproctitle==1.3.5
