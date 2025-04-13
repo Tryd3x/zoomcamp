@@ -14,7 +14,7 @@ def delivery_report(err, msg):
         msg.key(), msg.topic(), msg.partition(), msg.offset()))
 
 
-class RideCSVProducer:
+class RideCSVProducer: 
     def __init__(self, props: Dict):
         self.producer = KafkaProducer(**props)
         # self.producer = Producer(producer_props)
