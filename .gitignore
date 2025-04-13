@@ -1,8 +1,13 @@
-env
 .ipynb_checkpoints/
 
 **/artifacts/*
 **/datasets/*
+
+**/__pycache__
+
+# Ignore conda environments or virtual pyhton environments
+env
+**/venv/
 
 # Ignore all logs
 **/logs

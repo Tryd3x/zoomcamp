@@ -33,6 +33,12 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Cloud Storage, W
 - Learnt about DLT (data load tools - focused on extraction/ingestion, normalization and loading)
 - Understood the difference between dimension table and fact table (Star Schema)
 - Brushed up on Data Normalization (3NF)
+- Partition splits table into smaller tables and parent table holds the metadata to these smaller tables. Partition can be performed on single attribute.
+- Cluster logically sorts records based on some attribute. It does not split into smaller tables. Cluster can be performed on multiple attribute.  
+- Difference:  
+	- "Sort before insert" vs "Sort after insert"
+	- If stream data inserts, periodic clustering is preferred.
+	- If batch data inserts, partitioning is preferred
 - DBT seeds are basically dimensional tables that dont change frequently and can be stored as .csv files.
 - Usage of source() vs ref()
 - DBT packages: dbt_utils, codegen. Instructions on how to install them.
@@ -56,6 +62,7 @@ Tech stack: Big Query, Kestra, Terraform, Looker Studio, Google Cloud Storage, W
 - Learnt about flink (Distributed stream processing engine) - to process data stored in Kafka.
 - Learnt about watermark and how it resolves out of order events (delayed events)
 - Window types: Tumble (Non-overlap), Sliding (Overlap), Session
+- Utilized conda environment for managing python version. Utilized `vevn` for managing project's subfolder level python dependencies.
 
 ### **Challenges faced**
 
